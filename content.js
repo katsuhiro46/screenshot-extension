@@ -180,7 +180,15 @@
     // Acquire lock — if already locked, drop this paste
     if (!acquirePasteLock()) return;
 
-    const file = new File([blob], 'screenshot.png', { type: 'image/png' });
+    const now = new Date();
+    const ts = now.getFullYear().toString()
+      + String(now.getMonth() + 1).padStart(2, '0')
+      + String(now.getDate()).padStart(2, '0')
+      + '_'
+      + String(now.getHours()).padStart(2, '0')
+      + String(now.getMinutes()).padStart(2, '0')
+      + String(now.getSeconds()).padStart(2, '0');
+    const file = new File([blob], `screenshot_${ts}.png`, { type: 'image/png' });
 
     const target = getInputElement();
     if (!target) {
