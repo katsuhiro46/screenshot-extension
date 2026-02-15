@@ -1,0 +1,121 @@
+/* Screenshot button */
+.screenshot-ext-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #8e8ea0;
+  transition: background 0.15s, color 0.15s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.screenshot-ext-btn:hover {
+  background: rgba(142, 142, 160, 0.1);
+  color: #5a5a72;
+}
+
+/* Modal overlay */
+.screenshot-ext-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: screenshot-ext-fade-in 0.15s ease;
+}
+
+@keyframes screenshot-ext-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal dialog */
+.screenshot-ext-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.screenshot-ext-modal h3 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.screenshot-ext-modal-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1a1a2e;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.screenshot-ext-modal-btn:last-child {
+  margin-bottom: 0;
+}
+
+.screenshot-ext-modal-btn:hover {
+  background: #f7f7f8;
+  border-color: #c5c5d2;
+}
+
+.screenshot-ext-modal-btn .icon {
+  font-size: 20px;
+}
+
+.screenshot-ext-modal-btn .label {
+  font-weight: 500;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .screenshot-ext-modal {
+    background: #2f2f2f;
+  }
+
+  .screenshot-ext-modal h3 {
+    color: #e5e5e5;
+  }
+
+  .screenshot-ext-modal-btn {
+    background: #2f2f2f;
+    border-color: #444;
+    color: #e5e5e5;
+  }
+
+  .screenshot-ext-modal-btn:hover {
+    background: #3a3a3a;
+    border-color: #666;
+  }
+
+  .screenshot-ext-btn {
+    color: #b4b4c8;
+  }
+
+  .screenshot-ext-btn:hover {
+    background: rgba(180, 180, 200, 0.1);
+    color: #d4d4e8;
+  }
+}
